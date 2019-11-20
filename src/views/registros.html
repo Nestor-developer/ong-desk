@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../../node_modules/materialize-css/dist/css/materialize.min.css"
+        media="screen,projection" />
+    <link rel="stylesheet" href="../styles/estilos.css">
+    <!--Prueba Jquery-->
+    <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+    <script src="table.js"></script>
+    <script src="table2.js"></script>
+    <script src="table3.js"></script>
+    <script src="table4.js"></script>
+    <script src="../db/conexionBD.js"></script>
+    <title> Captura de registro </title>
+</head>
+
+<body>
+    <form class="p-4">
+        <div class="form-group">
+            <!-- <img src="img/faee.jpg"> -->
+            <h4> FUNDACIÓN DE APOYO PARA LA EDUCACIÓN ESPECIAL, A.C </h4>
+            <h5> FICHA DE IDENTIFICACIÓN DEL USUSARIO </h5>
+        </div>
+        <!-- Imagen -->
+        <div class="file-field input-field" id="imagen">
+            <div class="btn cyan darken-2">
+                <span>Imagen</span>
+                <input type="file" accept=".png, .jpg, .jpeg" name="imagen">
+            </div>
+            <div class="file-path-wrapper">
+                <input type="text" class="file-path validate black-text" id="imagenTexto">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label id="dateFe">FECHA</label>
+            <input type="date" id="dateF" class="form-control" placeholder="FECHA">
+        </div>
+        <div class="form-group">
+            <label id="añoCursoD">AÑO CURSO</label>
+            <input type="number" id="añoCurso" class="form-control" placeholder="AAAA">
+        </div>
+        <div class="form-group">
+            <label id="añoIngresoD">AÑO DE INGRESO</label>
+            <input type="text" id="añoIngreso" class="form-control" placeholder="AAAA">
+        </div>
+        <div class="form-group">
+            <br><br><br>
+            <h5> DATOS DEL BENEFICIARIO(A) </h5>
+            <h5> NOMBRE DEL BENEFICIARIO. </h5>
+            <input type="text" id="nombreBeneficiario" class="form-control" placeholder="NOMBRE(S)">
+            <input type="text" id="apellidoPaternoB" class="form-control" placeholder="APELLIDO PATERNO">
+            <input type="text" id="apellidoMaternoB" class="form-control" placeholder="APELLIDO MATERNO">
+            <label id="nacimientoS">FECHA DE NACIMIENTO</label>
+            <input type="date" id="nacimiento" class="form-control">
+            <label id="lugarN">LUGAR DE NACIMIENTO</label>
+            <input type="text" id="lugarNacimiento" class="form-control" placeholder="GUADALAJARA, JALISCO">
+            <label id="edadE">EDAD</label>
+            <input type="number" id="edad" class="form-control" min="1" max="120">
+            <label id="sexoS">SEXO</label>
+            <input type="text" id="sexo" class="form-control" placeholder="MASCULINO | FEMENINO">
+            <label id="pesoK">PESO</label>
+            <input type="text" id="peso" class="form-control" placeholder="PESO(Kg)">
+            <label id="estaturaE">ESTATURA</label>
+            <input type="text" id="estatura" class="form-control" placeholder="ESTARURA(cm)">
+            <label id="grupoS">GRUPO SANGUINEO</label>
+            <input type="text" id="sangre" class="form-control" placeholder="O+">
+            <label id="diagnostic">DIAGNÓSTICO</label>
+            <textarea type="text" id="diagnostico" class="form-control"></textarea><br>
+        </div>
+        <br><br><br><br><br><br><br><br><br>
+        <div class="form-group">
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <h5>ESTATUS FAMILIAR</h5>
+            <h5>VIVE ACTUALMENTE CON: </h5>
+            <input type="button" class="btn  btn-success" type="button" id="btnNuevoAlineamiento" value="nuevo">
+            <table class="table table-bordered table-hover" id="tablaAlineamiento">
+                <tr>
+                    <th id="nam">NOMBRE COMPLETO</th>
+                    <th id="par">PARENTESCO</th>
+                    <th id="oc">OCUPACIÓN</th>
+                    <th id="d">FECHA DE NACIMIENTO</th>
+                    <th id="op">OPCION</th>
+                </tr>
+                <tr>
+                    <td><input type="text" class="form-control" id="n"></td>
+                    <td><input type="text" class="form-control" id="p"></td>
+                    <td><input type="text" class="form-control" id="o"></td>
+                    <td><input type="date" class="form-control" id="f"></td>
+                    <td class="text-center">
+                        <div class="btn btn-danger">Eliminar</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="form-group">
+                <br><br><br><br><br><br>
+                <h5>DIRECCIÓN DONDE VIVE EL BENEFICIARIO.</h5> <br>
+                <input type="text" id="calle" class="form-control" placeholder="CALLE"> <br>
+                <input type="text" id="numeroI" class="form-control" placeholder="NUMERO INT"><br>
+                <input type="text" id="numeroE" class="form-control" placeholder="NUMERO EXT"> <br>
+                <input type="text" id="colonia" class="form-control" placeholder="COLONIA"> <br>
+                <input type="text" id="cP" class="form-control" placeholder="CÓDIGO POSTAL"> <br>
+                <input type="text" id="ciudad" class="form-control" placeholder="CIUDAD"> <br>
+                <input type="text" id="estado" class="form-control" placeholder="ESTADO"> <br>
+                <input type="text" id="tel" class="form-control" placeholder="TEL. CASA "> <br>
+                <div class="form-group">
+                    <h5>DATOS DE LOS PADRES</h5> <br>
+                    <h5>NOMBRE DEL PADRE: </h5> <br>
+                    <input type="text" id="nombrePadre" class="form-control" placeholder="NOMBRE(S)"> <br>
+                    <input type="text" id="apellidoPadreP" class="form-control" placeholder="APELLIDO PATERNO"> <br>
+                    <input type="text" id="apellidoMateronP" class="form-control" placeholder="APELLIDO MATERNO"> <br>
+                    <label id="nacimientoFe">FECHA DE NACIMIENTO</label>
+                    <input type="date" id="nacimientOp" class="form-control">
+                    <label id="ocup">OCUPACIÓN</label>
+                    <input type="text" id="ocupacionP" class="form-control" placeholder="OCUPACIÓN"> <br>
+                    <label id="direcc"> DIRECCIÓN DEL TRABAJO </label>
+                    <input type="text" id="direccionP" class="form-control" placeholder="DIRECCIÓN DEL TRABAJO"> <br>
+                    <label id="phoneT">TELEFONO DEL TRABAJO</label>
+                    <input type="text" id="telP" class="form-control" placeholder="TELEFONO DEL TRABAJO"> <br>
+                    <label id="phoneC">TELEFONO CELULAR</label>
+                    <input type="text" id="telC" class="form-control" placeholder="TELEFONO CELULAR"> <br>
+                    <label id="mailP">E-MAIL</label>
+                    <input type="email" id="mail" class="form-control" placeholder="ejemplo@mail.com"> <br>
+                </div>
+                <div class="form-group">
+                    <h5>NOMBRE DE LA MADRE: </h5> <br>
+                    <input type="text" id="nombreM" class="form-control" placeholder="NOMBRE(S)"> <br>
+                    <input type="text" id="apellidoPadreM" class="form-control" placeholder="APELLIDO PATERNO"> <br>
+                    <input type="text" id="apellidoMateronM" class="form-control" placeholder="APELLIDO MATERNO"> <br>
+                    <label id="nacimientoM">FECHA DE NACIMIENTO</label>
+                    <input type="date" id="nacimientOm" class="form-control">
+                    <label id="ocupacionMa">OCUPACIÓN</label>
+                    <input type="text" id="ocupacionM" class="form-control" placeholder="OCUPACIÓN"> <br>
+                    <label id="derecM">DIRECCIÓN DEL TRABAJO</label>
+                    <input type="text" id="direccionM" class="form-control" placeholder="DIRECCIÓN DEL TRABAJO"> <br>
+                    <label id="TELM">TELEFONO DEL TRABAJO</label>
+                    <input type="text" id="telM" class="form-control" placeholder="TELEFONO DEL TRABAJO"> <br>
+                    <label id="TELMC">TELEFONO CELULAR</label>
+                    <input type="text" id="telCM" class="form-control" placeholder="TELEFONO CELULAR"> <br>
+                    <label id="MAM">E-MAIL</label>
+                    <input type="email" id="mailM" class="form-control" placeholder="example@mail.com"> <br>
+                </div>
+                <div class="form-group">
+                    <h5>DATOS DEL TUTOR: </h5> <br>
+                    <input type="text" id="nombreT" class="form-control" placeholder="NOMBRE(S)"> <br>
+                    <input type="text" id="apellidoPadreT" class="form-control" placeholder="APELLIDO PATERNO"> <br>
+                    <input type="text" id="apellidoMateronT" class="form-control" placeholder="APELLIDO MATERNO"> <br>
+                    <label id="nacimientoT">FECHA DE NACIMIENTO</label>
+                    <input type="date" id="nacimientOtt" class="form-control">
+                    <label id="ocupacionTT">OCUPACIÓN</label>
+                    <input type="text" id="ocupacionT" class="form-control" placeholder="OCUPACIÓN"> <br>
+                    <label id="derecTT">DIRECCIÓN DEL TRABAJO</label>
+                    <input type="text" id="direccionT" class="form-control" placeholder="DIRECCIÓN DEL TRABAJO"> <br>
+                    <label id="TELTT">TELEFONO DEL TRABAJO</label>
+                    <input type="text" id="telT" class="form-control" placeholder="TELEFONO DEL TRABAJO"> <br>
+                    <label id="TELTTT">TELEFONO CELULAR</label>
+                    <input type="text" id="telCT" class="form-control" placeholder="TELEFONO CELULAR"> <br>
+                    <label id="MATT">E-MAIL</label>
+                    <input type="email" id="mailT" class="form-control" placeholder="example@mail.com"> <br>
+                </div>
+                <div class="form-goup">
+                    <h5>PERSONAS AUTORIZADAS PARA RECOGER AL BENEFICIARIO(A): </h5> <br>
+                    <input type="button" class="btn  btn-success" type="button" id="btnNuevoAlineamiento4"
+                        value="nuevo">
+                    <table class="table table-bordered table-hover" id="tablaAlineamiento4">
+                        <tr>
+                            <th id="nammM">NOMBRE COMPLETO</th>
+                            <th id="parrR">PARENTESCO</th>
+                            <th id="occC">DIRECCIÓN</th>
+                            <th id="ddC">TELEFONO DE CASA</th>
+                            <th id="toO">TELEFONO DE OFICINA</th>
+                            <th id="tcC">TELEFONO CELULAR</th>
+                            <th id="opP">OPCION</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control" id="nn"></td>
+                            <td><input type="text" class="form-control" id="pp"></td>
+                            <td><input type="text" class="form-control" id="oo"></td>
+                            <td><input type="text" class="form-control" id="ff"></td>
+                            <td><input type="text" class="form-control" id="oo"></td>
+                            <td><input type="text" class="form-control" id="ff"></td>
+                            <td class="text-center">
+                                <div class="btn btn-danger">Eliminar</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form-group">
+                    <h5>SUBIR IMAGEN DE LA IFE DE LAS PERSONAS. </h5><br>
+                    <div class="file-field input-field" id="imagen">
+                        <div class="btn cyan darken-2">
+                            <span>Imagen</span>
+                            <input type="file" accept=".png, .jpg, .jpeg" name="imagen">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input type="text" class="file-path validate black-text" id="imagenTexto">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h5>SI ESTA BAJO TRATAMIENTO MÉDICO:</h5><br>
+                        <h4>ANOTAR LOS MÉDICAMENTOS QUE TOMA, FÓRMULA, DÓSIS Y HORARIOS</h4><br>
+                        <input type="button" class="btn  btn-success" type="button" id="btnNuevoAlineamiento2"
+                            value="nuevo">
+                        <table class="table table-bordered table-hover" id="tablaAlineamiento2">
+                            <tr>
+                                <th id="nammm">MEDICAMENTO</th>
+                                <th id="parrr">FORMULA</th>
+                                <th id="occc">DOSIS</th>
+                                <th id="ddd">HORARIO</th>
+                                <th id="oppP">OPCIÓN</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="form-control" id="nnn"></td>
+                                <td><input type="text" class="form-control" id="ppp"></td>
+                                <td><input type="text" class="form-control" id="ooo"></td>
+                                <td><input type="text" class="form-control" id="fff"></td>
+                                <td class="text-center">
+                                    <div class="btn btn-danger">Eliminar</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="form-group">
+                        <h5>ANOTAR QUE MÉDICAMENTO(s) PUEDE TOMAR Y LA DÓSIS SI PRESENTA DÓLOR COMÚN (CABEZA, ESTÓMAGO,
+                            CÓLICOS,ETC.):</h5><br>
+                        <textarea type="text" id="diagnosticoA" class="form-control"></textarea><br>
+                        <h5>ANOTAR SI ES ALÉRGICO(a) A ALGÚN MEDICAMENTO O ALIMENTO(ESPECIFICAR A CUÁL.): </h5><br>
+                        <textarea type="text" id="diagnosticoB" class="form-control"></textarea><br>
+                    </div>
+                    <div class="form-goup">
+                        <h5>EN CASO DE EMERGENCIA COMUNICARSE CON: </h5><br>
+                        <input type="button" class="btn  btn-success" type="button" id="btnNuevoAlineamiento3"
+                            value="nuevo">
+                        <table class="table table-bordered table-hover" id="tablaAlineamiento3">
+                            <tr>
+                                <th id="namm">NOMBRE COMPLETO</th>
+                                <th id="parr">PARENTESCO</th>
+                                <th id="occ">DIRECCIÓN</th>
+                                <th id="dd">TELEFONO DE CASA</th>
+                                <th id="to">TELEFONO DE OFICINA</th>
+                                <th id="tc">TELEFONO CELULAR</th>
+                                <th id="opp">OPCION</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="form-control" id="nn"></td>
+                                <td><input type="text" class="form-control" id="pp"></td>
+                                <td><input type="text" class="form-control" id="oo"></td>
+                                <td><input type="text" class="form-control" id="ff"></td>
+                                <td><input type="text" class="form-control" id="oo"></td>
+                                <td><input type="text" class="form-control" id="ff"></td>
+                                <td class="text-center">
+                                    <div class="btn btn-danger">Eliminar</div>
+                                </td>
+                            </tr>
+                        </table>
+                        <label id="elaborating">ELABORADOR POR</label>
+                        <input type="text" id="elab" class="form-control" placeholder="ELABORADO POR: "> <br>
+                        <label id="Date">FECHA</label>
+                        <input type="date" id="date" class="form-control"> <br>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block">
+                Guardar
+            </button>
+            <br>
+    </form>
+    <!-- Logic -->
+    <script>
+        /*______________________________________________________________________________________________*/
+        const { ipcRenderer } =  require('electron');
+        const form = document.querySelector('form');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const Fecha = document.querySelector('#dateF').value;
+            const añoCursoD = document.querySelector('#añoCurso').value;
+            const añoIngreso = document.querySelector('#añoIngreso').value;
+            const nombreBeneficiario = document.querySelector('#nombreBeneficiario').value;
+            const apellidoPaternoB = document.querySelector('#apellidoPaternoB').value;
+            const apellidoMaternoB = document.querySelector('apellidoMaternoB').value;
+            const nacimientoS = document.querySelector('##nacimiento').value;
+            const edadE = document.querySelector('#edad').value;
+            const sexoS = document.querySelector('#sexo').value;
+            const pesoK = document.querySelector('#peso').value;
+            const estaturaE = document.querySelector('#estatura').value;
+            const grupoS = document.querySelector('#sangre').value;
+            const diagnostic = document.querySelector('#diagnostico').value;
+            /*const lugarN = document.querySelector('#').value;
+            const lugarN = document.querySelector('#').value;
+            const lugarN = document.querySelector('#').value;
+            const lugarN = document.querySelector('#').value;
+            const lugarN = document.querySelector('#').value;
+            const lugarN = document.querySelector('#').value;
+            const lugarN = document.querySelector('#').value;
+            const lugarN = document.querySelector('#').value;
+            const lugarN = document.querySelector('#').value;
+            const lugarN = document.querySelector('#').value;
+            const lugarN = document.querySelector('#').value;
+            const lugarN = document.querySelector('#').value;
+            const lugarN = document.querySelector('#').value;*/
+
+            const newProduct = {
+                fecha: Fecha,
+                añoCurso: añoCursoD,
+                añoIngreso: añoIngreso
+            };
+            ipcRenderer.send('product:new', newProduct);
+        });
+    </script>
+    <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+</body>
+
+</html>

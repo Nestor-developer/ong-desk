@@ -1,0 +1,738 @@
+/*estilos*/
+@font-face {
+    font-family: "handwriting";
+    src: url("journal.eot");
+    src: url("journal.eot?") format('eot'),
+         url('journal.woff') format('woff'),
+         url('journal.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "typewriter";
+    src: url("veteran_typewriter.eot");
+    src: url("veteran_typewriter.eot?") format('eot'),
+         url('veteran_typewriter.woff') format('woff'),
+         url('veteran_typewriter.ttf') format('truetype');
+}
+
+body {
+    overflow: hidden;
+    overflow-y: auto;
+    background: #222;
+  }
+
+.row {
+    margin: 0%;
+  }
+
+  .fijado-abajo {
+    z-index: 100;
+  
+    width: 100%;
+  
+    margin: 0;
+    padding: 0;
+  
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .fijado-abajo > .row {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .fijado-abajo > .row > .col {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .fijado-abajo > .row > .col > .card-panel {
+    margin: 0;
+  }
+
+  h5 {
+    color: black !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    font: 1em "typewriter", sans-serif;
+  }
+
+  input {
+  margin-bottom: 30px !important;
+}
+input:disabled, .select-input-estatico input {
+  color: darkorange !important;
+}
+
+input:disabled::-webkit-input-placeholder {
+  color: darkorange !important;
+}
+
+form{
+    position: relative;
+    /*width: 800px;
+    height: 700px;*/
+    margin: 0 auto;
+    background: powderblue;
+}
+/*id*/
+#imagenTexto{
+    width: 20%;
+}
+#dateFe{
+    position: absolute;
+    top: 130px;
+    left: 800px;
+}
+#dateF{
+    position: absolute;
+    width: 25%;
+    left: 900px;
+    top: 120px;
+    color: black !important;
+}
+#añoCursoD{
+    position: absolute;
+    top: 180px;
+    left: 750px;
+}
+#añoCurso{
+    position: absolute;
+    left: 900px;
+    top: 170px;
+    width: 25%;
+    color: black !important;
+}
+#añoIngresoD{
+    position: absolute;
+    top: 230px;
+    left: 700px;
+}
+#añoIngreso{
+    position: absolute;
+    left: 900px;
+    top: 220px;
+    width: 25%;
+    color: black !important;
+}
+#nombreBeneficiario{
+    width: 30%;
+    top: 350px;
+    position: absolute;
+    color: black !important;
+}
+#apellidoPaternoB{
+    width: 30%;
+    position: absolute;
+    left: 430px;
+    top: 350px;
+    color: black !important;
+}
+#apellidoMaternoB{
+    width: 30%;
+    position: absolute;
+    left: 860px;
+    top: 350px;
+    color: black !important;
+}
+#nacimientoS{
+    position: absolute;
+    right: 1000px;
+    top: 460px;
+}
+#nacimiento{
+    position: absolute;
+    width: 25%;
+    left: 30px;
+    top: 475px;
+    color: black !important;
+}
+#lugarN{
+position: absolute;
+right: 560px;
+top: 460px;
+}
+#lugarNacimiento{
+    position: absolute;
+    width: 30%;
+    left: 460px;
+    top: 475px;
+    color: black !important;
+}
+#edadE{
+    position: absolute;
+    right: 240px;
+    top: 460px;
+}
+#edad{
+    width: 20%;
+    position: absolute;
+    left: 920px;
+    top: 475px;
+    color: black !important;
+}
+#sexoS{
+position: absolute;
+right: 1100px;
+top: 550px;
+}
+#sexo{
+    position: absolute;
+    width: 30%;
+    left: 20px;
+    top: 580px;
+    color: black !important;
+}
+#pesoK{
+position: absolute;
+right: 600px;
+top: 550px;
+}
+#peso{
+    position: absolute;
+    width: 20%;
+    top: 580px;
+    left: 500px;
+    color: black !important;
+}
+#estaturaE{
+    position: absolute;
+    right: 160px;
+    top: 550px;
+}
+#estatura{
+    position: absolute;
+    width: 20%;
+    top: 580px;
+    left: 920px;
+    color: black !important;
+}
+#grupoS{
+    position: absolute;
+    top: 650px;
+    right: 1000px;
+}
+#sangre{
+    position: absolute;
+    width: 30%;
+    top: 680px;
+    left: 30px;
+    color: black !important;
+}
+#diagnostic{
+    position: absolute;
+    top: 650px;
+    right: 400px;
+}
+#diagnostico{
+    width: 60%;
+    position: absolute;
+    top: 680px;
+    left: 500px;
+    color: black !important;
+}
+#nombreCompleto{
+    width: 40%;
+}
+#parentesco{
+    width: 30%;
+}
+#ocupacion{
+    width: 30%;
+}
+#nacimientoF{
+    width: 30%;
+}
+/*boton de añadir*/
+.adde{
+    position: absolute;
+    top: 900px;
+    left: 320px;
+}
+.addc{
+    position: absolute;
+    top: 1250px;
+    left: 250px;
+}
+.addb{
+    position: absolute;
+    top: 1020px;
+    left: 240px;
+}
+#nam{
+    color: black !important;
+}
+#par{
+    color: black !important;
+}
+#oc{
+    color: black !important;
+}
+#d{
+    color: black !important;
+}
+#op{
+    color: black !important;
+}
+#n
+{
+    color: black !important;
+}
+#p{
+    color: black !important;
+}
+#o{
+    color: black !important;
+}
+#f{
+    color: black !important;
+}
+#calle{
+    position: absolute;
+    width: 20%;
+    color: black !important;
+}
+#numeroI{
+    position: absolute;
+    width: 10%;
+    top: 1265px;
+    left: 440px;
+    color: black !important;
+}
+#numeroE{
+    position: absolute;
+    width: 10%;
+    top: 1265px;
+    left: 300px;
+    color: black !important;
+}
+#colonia{
+    position: absolute;
+    width: 10%;
+    top: 1265px;
+    left: 580px;
+    color: black !important;
+}
+#cP{
+    position: absolute;
+    width: 10%;
+    top: 1265px;
+    left: 720px;
+    color: black !important;
+}
+#ciudad
+{
+    position: absolute;
+    color: black !important;
+    width: 10%;
+    top: 1265px;
+    left: 860px;
+}
+#estado{
+    color: black !important;
+    position: absolute;
+    width: 10%;
+    top: 1265px;
+    left: 1000px;
+}
+#tel{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 1310px;
+}
+#nombrePadre{
+    color: black !important;
+    position: absolute;
+    width: 30%;
+    top: 1500px;
+}
+#apellidoPadreP{
+    color: black !important;
+    position: absolute;
+    width: 30%;
+    top: 1500px;
+    left: 450px;
+}
+#apellidoMateronP{
+    color: black !important;
+    position: absolute;
+    width: 30%;
+    top: 1500px;
+    left: 850px;
+}
+#nacimientoFe{
+    color: black !important;
+}
+#nacimientOp{
+    color: black !important;
+    width: 30%;
+}
+#ocup{
+    color: black !important;
+    position: absolute; /* Mueves el id o mas bien da permiso*/
+    top: 1580px; /*es la medida hacia abajo arriba*/
+    left: 420px; /* es la direccion hacia la derecha */
+}
+#ocupacionP{
+    color: black !important;
+    width: 15%;
+    position: absolute;
+    top: 1615px;
+    left: 420px;
+}
+#direcc{
+    color: black !important;
+    position: absolute;
+    top: 1580px;
+    left: 900px;
+  
+}
+#direccionP{
+    color: black !important;
+    width: 20%;
+    position: absolute;
+    top: 1615px;
+    left: 900px;
+}
+#phoneT{/*Telefono de trabajo*/
+    color: black !important;
+    width: 20%;
+    position: absolute;
+    top: 1720px; 
+ 
+}
+#telP{
+    color: black !important;
+    width: 20%;
+    position: absolute;
+    top: 1735px; 
+
+    
+}
+#phoneC{/*Celular*/
+    color: black !important;
+    position: absolute;
+    top: 1720px; 
+    left: 500px;;
+ 
+}
+#telC{
+    color: black !important;
+    width: 20%;
+    position: absolute;
+    top: 1735px; 
+    left: 500px;
+  
+    
+}
+#mailP{
+    color: black !important;
+    position: absolute;
+    top: 1720px; 
+    left: 900px; 
+}
+#mail{
+    color: black !important;
+    width: 20%;
+    position: absolute;
+    top: 1735px; 
+    left: 900px;  
+}
+/*Datos madre _______________________________________________________________________*/
+#nombreM{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 1830px;
+}
+#apellidoPadreM{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 1830px;
+    left: 500px;
+}
+#apellidoMateronM{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 1830px;
+    left: 900px;
+}
+#nacimientOm{
+    color: black !important;
+    width: 20%;
+
+}
+#nacimientoM{
+    color: black !important;
+ 
+}
+/*Ocupación _______________________________*/
+#ocupacionMa{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 1900px;
+    left: 500px;
+ 
+}
+#ocupacionM{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 1930px;
+    left: 500px;
+
+}
+/*Dirección_______________________________*/
+#derecM{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 1900px;
+    left: 900px;
+ 
+}
+#direccionM{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 1930px;
+    left: 900px;
+
+}
+/*Telefono trabajo_______________________*/
+#TELM{
+    color: black !important;
+    width: 20%;
+
+}
+#telM{
+    color: black !important;
+    width: 20%;
+
+}
+/*______________________________________*/
+/*Telefono celular*/
+#TELMC{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 2045px;
+    left: 500px;
+ 
+}
+#telCM{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 2075px;
+    left: 500px;
+
+}
+/*Correo________________________________*/
+#MAM{
+    color: black !important;
+    position: absolute;
+    top: 2045px;
+    left: 900px;
+    
+}
+#mailM{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 2075px;
+    left: 900px;
+}
+/*TUTOR_______________________________________________________________________________*/
+#nombreT{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 2250px;
+ 
+}
+#apellidoPadreT{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 2250px;
+    left: 500px;
+
+}
+#apellidoMateronT{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 2250px;
+    left: 900px;
+}
+/*FECHA_________*/
+nacimientoT{
+    color: black !important;
+    
+}
+#nacimientOtt{
+    color: black !important;
+    width: 20%;
+}
+/*ocupacion___________*/
+#ocupacionTT{
+    color: black !important;
+    position: absolute;
+    top: 2320px;
+    left: 500px;
+}
+#ocupacionT{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 2350px;
+    left: 500px;
+
+}
+/*Dirección__________*/
+#derecTT{
+    color: black !important;
+    position: absolute;
+    top: 2320px;
+    left: 900px;
+}
+#direccionT{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 2350px;
+    left: 900px;
+}
+/*Teléfono_____________*/
+#TELTT{
+    color: black !important;
+}
+#telT{
+    color: black !important;
+    width: 20%;
+}
+/*CELULAR*/
+#TELTTT{
+    color: black !important;
+    position: absolute;
+    top: 2464px;
+    left: 500px;
+}
+#telCT{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 2493px;
+    left: 500px;
+}
+/*correo*/
+#MATT{
+    color: black !important;
+    position: absolute;
+    top: 2464px;
+    left: 900px;
+}
+#mailT{
+    color: black !important;
+    position: absolute;
+    width: 20%;
+    top: 2493px;
+    left: 900px;
+}
+
+/*TABLA personas autorizadas______________________________________________________________________*/
+#nammM{
+    width: 15%;
+}
+#parrR{
+    width: 15%;
+}
+#occC{
+    width: 15%;
+}
+#ddC{
+    width: 15%;
+}
+#toO{
+    width: 15%;
+}
+#tcC{
+    width: 15%;
+}
+/*TABLA MEDICAMENTOS QUE TOMA_____________________________________________________________________*/
+#nammm{
+    width: 20%;
+}
+#parrr{
+    width: 20%;
+}
+#occc{
+    width: 20%;
+}
+#ddd{
+    width: 20%;
+}
+/*MeDicamentos puede tomar, DOSIS, DOLOR DE CABEZA ETC...___________________________________________*/
+#diagnosticoA{
+       color: black !important;
+       width: 100%
+}
+/*SI ES ALERGICO A ALGUN MEDICAMENTO O ALIMENTO ...________________________________________________*/
+#diagnosticoB{
+    color: black !important;
+    width: 100%
+}
+/*tABLA DE EMERGENCIA PARA COMUNICARSE CON . . . __________________________________________________*/
+#namm{
+    width: 15%;
+}
+#parr{
+    width: 15%;
+}
+#occ{
+     width: 15%;
+}
+#dd{
+     width: 15%;
+}
+#to{
+ width: 15%;	
+}
+#tc{
+ width: 15%;
+}
+/*Eleaborado por___________________________________________________________________________________*/
+
+#elaborating{
+    color: black !important;
+}
+#elab{
+    color: black !important;
+    width: 20%;
+}
+/*FechA___________________________________________________*/
+#Date{
+    color: black !important;
+    position: absolute;
+    position: absolute;
+
+}
+#date{
+    color: black !important;
+    width: 20%;
+}
+/*Label*/
+label{
+    font: .8em "typewriter",sans-serif;
+    color: black !important;
+    font-size: 18px !important;
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">-->
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <!--<link type="text/css" rel="stylesheet" href="../../node_modules/materialize-css/dist/css/materialize.min.css"
+        media="screen,projection" />-->
+    <!--<link rel="stylesheet" href="../styles/estilos.css">-->
+    <title> Registros </title>
+</head>
+
+<body>
+    <div class="container p-4">
+        <div class="row" id="registros">
+        </div>
+    </div>
+
+    <!-- Codigo de javascript -->
+    <script>
+        //const electron = require('electron');
+        const {ipcRenderer} = window.require('electron');
+        const registros = document.querySelector('#registros');
+
+        // New Product
+      ipcRenderer.on('product:new', (e, newProduct) => {
+        const newProductTemplate = `
+        <div class="col-xs-4 p-2">
+        <div class="card text-center">
+            <div class="card-header">
+              <h5 class="card-title">${newProduct.Fecha}</h5>
+            </div>
+            <div class="card-body">
+              ${newProduct.añoCurso}
+              <hr>
+              ${newProduct.añoIngreso} $
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-danger btn-sm">
+                DELETE
+              </button>
+            </div>
+        </div>
+        </div>
+      `;
+        products.innerHTML += newProductTemplate;
+        const btns = document.querySelectorAll('.btn.btn-danger');
+        btns.forEach(btn => {
+          btn.addEventListener('click', e => {
+            e.target.parentElement.parentElement.parentElement.remove();
+          });
+        })
+      });
+      // Remove All Products
+      ipcRenderer.on('products:remove-all', e => {
+        products.innerHTML = '';
+      });
+      // Remove Single Product
+      function removeProduct(e) {
+      }
+    </script>
+    <!--<script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>-->
+    <!--<script type="text/javascript" src="../../node_modules/materialize-css/dist/js/materialize.min.js"></script>-->
+</body>
+
+</html>
